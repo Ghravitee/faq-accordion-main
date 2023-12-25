@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-Pink: hsl(275, 100%, 97%);
+  --Grayish-Purple: hsl(292, 16%, 49%);
+  --Dark-Purple: hsl(292, 42%, 14%);
+
+  --ff-primary: "Work Sans", sans-serif;
+
+  --br: 0.4rem;
+}
+
+/* For box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Removes default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* List elements */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/*  root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.2;
+}
+
+/* Default styles for elements that do not have a class*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Global styling for images*/
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  padding-left: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+  padding: 9.5rem 1.5rem;
+  background-color: var(--Light-Pink);
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.container-text {
+  background-color: var(--White);
+  border-radius: var(--br);
+  padding: 1.6rem;
+}
+
+.container-text-heading {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  width: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--Dark-Purple);
+  font-weight: 700;
+}
+
+.accordion {
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  transition: all 0.4s;
+  display: grid;
+  grid-template-columns: 90% 1fr;
+}
+
+.accordion-paragraph {
+  font-size: 0.9rem;
+  color: var(--Dark-Purple);
+  font-weight: 700;
+  max-width: 200px;
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-primary);
+}
+
+.accordion-paragraph:hover {
+  color: rgb(158, 7, 158);
+}
+
+.accordion::after {
+  background-image: url("./assets/images/icon-plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.4s;
+}
+
+.active {
+  font-weight: 700;
+  color: var(--Very-Dark-Desaturated-Blue);
+}
+
+.active::after {
+  background-image: url("./assets/images/icon-minus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  transition: all 0.4s;
+}
+
+.desc {
+  padding: 0;
+  background-color: var(--white);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.desc-paragraph {
+  font-size: .85rem;
+  color: var(--Grayish-Purple);
+  font-weight: 600;
+  opacity: .6;
+  margin-bottom: 1rem;
+}
+
+.desc-paragraph:hover {
+  color: var(--Soft-Red);
+}
+
+hr {
+  border: 1px solid var(--Light-Pink);
+}
+
+
+
+/* MEDIA QUERIES MIN-WIDTH: 376PX */
+/* MEDIA QUERIES MIN-WIDTH: 376PX */
+/* MEDIA QUERIES MIN-WIDTH: 376PX */
+@media (min-width: 376px) {
+  body {
+    background-image: url("./assets/images/background-pattern-desktop.svg");
+  
+      padding: 14.5rem 2rem;
+    
+  }
+
+  .container-text {
+    max-width: 25rem;
+  }
+
+  .accordion-paragraph {
+    max-width: none;
+  }
+}
+
+/* MEDIA QUERIES MIN-WIDTH: 765PX */
+/* MEDIA QUERIES MIN-WIDTH: 765PX */
+/* MEDIA QUERIES MIN-WIDTH: 765PX */
+
+@media (min-width: 765px) {
+
+  
+ 
+  .container-text {
+    max-width: 30rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+
+  .accordion::after {
+    background-image: url("./assets/images/icon-plus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.4s;
+  }
+
+  .active::after {
+    background-image: url("./assets/images/icon-minus.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.4s;
+  }
+}

@@ -8,7 +8,7 @@
 
   --ff-primary: "Work Sans", sans-serif;
 
-  --br: 0.4rem;
+  --br: 0.5rem;
 }
 
 /* For box sizing */
@@ -212,7 +212,7 @@ hr {
   body {
     background-image: url("./assets/images/background-pattern-desktop.svg");
   
-      padding: 14.5rem 2rem;
+      /* padding: 14.5rem 2rem; */
     
   }
 
@@ -239,6 +239,14 @@ hr {
 }
 
 @media (min-width: 1024px) {
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .container-text-heading {
+    margin-bottom: 1.5rem;
+  }
 
 
   .accordion::after {
